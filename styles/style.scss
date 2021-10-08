@@ -1,0 +1,485 @@
+@import "./Reset.scss";
+@import "./libs/mixin.scss";
+@import "./libs/Variable.scss";
+
+%backgroundParams {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body {
+  width: 100vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+.Wrapper {
+  @include dimension(100, 100);
+  @include grid-display(grid, 25% 25% 25% 25%, auto);
+  opacity: 0.5;
+}
+.Header-container {
+  @include grid(1, 5, 1, 2);
+  @extend %backgroundParams;
+  @include grid-display(grid, 50% 50%, 16% 84%);
+  height: 800px;
+}
+
+.Logo {
+  @include grid(1, 2, 1, 2);
+  @include grid-position(flex-start, center);
+  margin-left: 6%;
+  width: 23%;
+}
+.Logo img {
+  width: 100%;
+}
+.Menu-mobile-container,
+.Menu-mobile-content {
+  display: none;
+}
+.Menu-container {
+  @include grid(2, 3, 1, 2);
+  @include dimension(72, 45);
+  @include grid-position(flex-end, center);
+  @include grid-display(grid, 64% 27%, 100%);
+}
+.Menu-Desktop {
+  @include grid(1, 2, 1, 1);
+  @include grid-display(grid, 30% 35% 20%, 100%);
+  @include grid-position(unset, center);
+  @include size(0.14, "desktop");
+  color: $White;
+}
+.Contact {
+  @include size(0.11, "desktop");
+  @include grid(2, 3, 1, 1);
+  @include radius(30px);
+  border: none;
+  background-color: $White;
+  font-weight: 600;
+  cursor: pointer;
+  &:hover {
+    background-color: $Ligth-blue;
+    color: $White;
+  }
+}
+.Header-content {
+  @include grid(1, 3, 2, 3);
+  @include grid-display(grid, 100%, 30% 70%);
+  @include grid-position(center, center);
+  height: 100%;
+}
+.Header-content h1 {
+  @include grid(1, 1, 1, 2);
+  @include size(0.4, "desktop");
+  @include grid-position(center, flex-end);
+  font-family: $Fraunces;
+  letter-spacing: 10px;
+  color: $White;
+  text-align: center;
+}
+.Header-content img {
+  @include grid(1, 1, 2, 3);
+  @include grid-position(center, flex-start);
+  margin-top: 10%;
+}
+.Brand-container {
+  @include grid(1, 3, 2, 3);
+  @include grid-display(grid, 100%, 43.3% 23.3% 33.3%);
+  background-color: $White;
+  height: 601px;
+}
+.Brand-title,
+.Audience-title {
+  @include grid(1, 1, 1, 2);
+  @include grid-position(center, flex-end);
+  @include size(0.29, "desktop");
+  color: $Very-dark-desaturated-blue;
+  font-family: $Fraunces;
+  width: 55%;
+}
+.Brand-text,
+.Audience-text {
+  @include grid(1, 1, 2, 3);
+  @include grid-position(center, center);
+  @include dimension(62, 58);
+  @include size(0.122, "desktop");
+  color: $Very-dark-grayish-blue;
+  font-family: $Barlow;
+  line-height: 152%;
+  margin-left: 7%;
+}
+.Brand-learn-more,
+.Audience-learn-more {
+  @include grid(1, 1, 3, 4);
+  @include grid-position(center, center);
+  @include size(0.1, "desktop");
+  @include dimension(15, 15);
+  @include grid-position(flex-start, flex-start);
+  margin-left: 24%;
+  font-family: $Fraunces;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+.Brand-learn-more::after,
+.Audience-learn-more::after {
+  @include dimension(100, 25);
+  opacity: 0.4;
+  border-radius: 15px;
+  content: "";
+  background-color: $Yellow;
+  display: block;
+  position: absolute;
+  top: 40%;
+  left: -3%;
+  z-index: -1;
+}
+.Brand-learn-more:hover::after,
+.Audience-learn-more:hover::after {
+  opacity: 1;
+}
+.Brand-Image {
+  @include grid(3, 5, 2, 3);
+  background-image: url("../images/desktop/image-transform.jpg");
+  @extend %backgroundParams;
+}
+.Audience-image {
+  @include grid(1, 3, 3, 4);
+  background-image: url("../images/desktop/image-stand-out.jpg");
+  @extend %backgroundParams;
+  height: 601px;
+}
+.Audience-container {
+  @include grid(3, 5, 3, 4);
+  @include grid-display(grid, 100%, 43.3% 23.3% 33.3%);
+  background-color: $White;
+}
+.Audience-title {
+  @include dimension(75, 40);
+  margin-left: 4%;
+}
+.Audience-text {
+  @include dimension(63, 58);
+  margin-right: 14%;
+}
+.Audience-learn-more {
+  @include grid-position(unset, unset);
+  margin-left: 20%;
+}
+.Audience-learn-more::after {
+  background-color: $Soft-red;
+}
+.Graphic-container {
+  @extend %backgroundParams;
+  @include grid-display(grid, 100%, 60% 40%);
+  @include grid(1, 3, 4, 5);
+  color: $Dark-desaturated-cyan;
+  background-image: url("../images/desktop/image-graphic-design.jpg");
+  height: 601px;
+}
+.Graphic-title,
+.Photography-title {
+  @include grid(1, 3, 2, 3);
+  @include grid-position(center, center);
+  @include dimension(31, 71);
+  @include size(0.19, "desktop");
+  font-family: $Fraunces;
+  font-weight: 900;
+  margin-left: 1%;
+}
+.Graphic-text,
+.Photography-text {
+  @include grid(1, 3, 2, 3);
+  @include grid-position(center, center);
+  @include dimension(48, 17);
+  @include size(0.11, "desktop");
+  font-family: $Barlow;
+  line-height: 165%;
+  text-align: center;
+}
+.Photography-container {
+  @extend %backgroundParams;
+  @include grid(3, 5, 4, 5);
+  @include grid-display(grid, 100%, 60% 40%);
+  color: $Dark-desaturated-cyan;
+  background-image: url("../images/desktop/image-photography.jpg");
+}
+.Photography-title {
+  @include dimension(26, 71);
+  margin-right: 2%;
+}
+.Photography-text {
+  @include dimension(51, 17);
+}
+.Client-container {
+  @include grid(1, 5, 5, 6);
+  @include grid-display(grid, 100%, 30% 70%);
+  background-color: $White-smog;
+  height: 774px;
+}
+.Client-title {
+  @include dimension(25, 32);
+  @include grid(1, 1, 1, 2);
+  @include grid-position(center, flex-end);
+  @include size(0.135, "desktop");
+  font-family: $Fraunces;
+  color: $Grayish-blue;
+  letter-spacing: 4px;
+  margin-left: 1%;
+  letter-spacing: 5px;
+}
+.Client-centent {
+  @include grid(1, 1, 2, 3);
+  @include grid-display(grid, 33% 33% 33%, 100%);
+  width: 80%;
+  justify-self: center;
+}
+.Client-items {
+  @include grid-display(grid, 100%, 30% 30% 40%);
+}
+.Client-img-content {
+  @include grid-display(grid, 100%, 100%);
+  @include grid(1, 1, 1, 2);
+}
+.Client-img {
+  @include grid(1, 1, 1, 1);
+  @include radius(100px);
+  @include grid-position(center, center);
+  width: 19%;
+  margin: 1% 1% 8% 4%;
+}
+.Client-items-text {
+  @include grid(1, 1, 2, 3);
+  @include dimension(97, 80);
+  @include size(0.122, "desktop");
+  color: $Dark-grayish-blue;
+  text-align: center;
+  font-family: $Barlow;
+  line-height: 168%;
+  margin-left: 5%;
+}
+.Client-items-detail-content {
+  @include grid(1, 1, 3, 4);
+  @include grid-display(grid, 100%, 13% 15%);
+}
+.Client-items-name {
+  @include size(0.122, "desktop");
+  @include grid-position(center, center);
+  font-family: $Fraunces;
+}
+.Client-items-role {
+  @include size(0.1, "desktop");
+  @include grid-position(center, center);
+  color: $Grayish-blue;
+  font-family: $Barlow;
+}
+.Items-one {
+  @include grid(1, 2, 6, 7);
+  background-image: url("../images/desktop/image-gallery-milkbottles.jpg");
+  @extend %backgroundParams;
+  height: 447px;
+}
+.Items-two {
+  @include grid(2, 3, 6, 7);
+  background-image: url("../images/desktop/image-gallery-orange.jpg");
+  @extend %backgroundParams;
+}
+.Items-three {
+  @include grid(3, 4, 6, 7);
+  background-image: url("../images/desktop/image-gallery-cone.jpg");
+  @extend %backgroundParams;
+}
+.Items-four {
+  @include grid(4, 5, 6, 7);
+  background-image: url("../images/desktop/image-gallery-sugarcubes.jpg");
+  @extend %backgroundParams;
+}
+.Footer-container {
+  @include grid(1, 5, 7, 8);
+  @include grid-display(grid, 100%, 31% 39% 30%);
+  color: $Dark-moderate-cyan-texte;
+  background-color: $Moderate-blue;
+  height: 350px;
+}
+.Footer-title {
+  @include grid(1, 1, 1, 2);
+  @include grid-display(grid, 100%, 100%);
+  @include dimension(100, 100);
+}
+.Footer-title img {
+  @include grid(1, 1, 1, 1);
+  @include grid-position(center, flex-end);
+  margin-right: 1%;
+  width: 12%;
+}
+.Footer-Menu-container {
+  @include grid(1, 1, 2, 3);
+  @include grid-display(grid, 100%, 100%);
+  @include grid-position(center, center);
+  @include dimension(100, 100);
+}
+.Footer-Menu {
+  @include grid(1, 1, 1, 1);
+  @include grid-display(grid, 36% 42% 33%, 100%);
+  @include grid-position(center, center);
+  @include dimension(20.5, 43);
+  @include size(0.12, "desktop");
+  font-family: $Barlow;
+  font-weight: 600;
+}
+.Menu-item:hover {
+  color: $White;
+  cursor: pointer;
+}
+.Social-container {
+  @include grid(1, 1, 3, 4);
+  @include grid-position(center, center);
+  @include grid-display(grid, 100%, 100%);
+  @include dimension(100, 100);
+  color: $Dark-moderate-cyan-social;
+}
+.Social-icons {
+  @include grid(1, 1, 1, 1);
+  @include grid-position(center, flex-start);
+  @include grid-display(grid, 25% 25% 25% 25%, 100%);
+  @include dimension(13, 47);
+  @include size(0.15, "desktop");
+}
+.fa-facebook-square {
+  @include grid(1, 2, 1, 1);
+  @include grid-position(center, center);
+}
+.fa-instagram {
+  @include grid(2, 3, 1, 1);
+  @include grid-position(center, center);
+}
+.fa-twitter {
+  @include grid(3, 4, 1, 1);
+  @include grid-position(center, center);
+}
+.fa-pinterest {
+  @include grid(4, 5, 1, 1);
+  @include grid-position(center, center);
+}
+.fab:hover {
+  color: $White;
+  cursor: pointer;
+}
+.attribution {
+  @include size(0.1, "desktop");
+  text-align: center;
+  position: absolute;
+  top: 99%;
+  width: 100%;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+/*Breakpoint 1440px*/
+@media (max-width: $Screen-Desktop) {
+  .Menu-Desktop {
+    @include grid(1, 2, 1, 1);
+    @include grid-display(grid, 30% 35% 20%, 100%);
+    @include grid-position(unset, center);
+    color: $White;
+    @include size(0.14, "desktop");
+  }
+  .Contact {
+    @include size(0.11, "desktop");
+  }
+  .Header-content h1 {
+    @include grid(1, 1, 1, 2);
+    @include size(0.7, "desktop");
+    font-size: 7vmin;
+    @include grid-position(center, center);
+  }
+  .Header-content img {
+    margin-top: 4%;
+  }
+
+  .Brand-title {
+    @include size(0.29, "desktop");
+  }
+  .Brand-text,
+  .Audience-text {
+    @include size(0.122, "desktop");
+    @include dimension(63, 57);
+    line-height: 160%;
+    margin-left: 9%;
+  }
+  .Brand-learn-more,
+  .Audience-learn-more {
+    @include size(0.122, "desktop");
+    @include dimension(18, 21);
+    margin: 3% 1% 1% 24%;
+  }
+  .Brand-learn-more::after,
+  .Audience-learn-more::after {
+    @include dimension(100, 18);
+    top: 30%;
+  }
+  .Audience-title {
+    @include size(0.52, "mobile");
+    @include dimension(77, 40);
+    margin-left: 7%;
+  }
+  .Audience-text {
+    @include dimension(62, 64);
+    margin-right: 16%;
+    line-height: 170%;
+  }
+  .Audience-learn-more {
+    margin: 2.6% 1% 1% 16%;
+  }
+  .Graphic-title,
+  .Photography-title {
+    @include size(0.19, "desktop");
+  }
+  .Graphic-text,
+  .Photography-text {
+    @include size(0.11, "desktop");
+  }
+  .Client-title {
+    @include dimension(40, 32);
+    @include size(0.135, "desktop");
+    margin-left: 15%;
+    letter-spacing: 6px;
+  }
+  .Client-items-text {
+    @include dimension(93, 86);
+    @include size(0.125, "desktop");
+    font-family: $Barlow;
+    line-height: 179%;
+    margin-left: 5%;
+  }
+  .Client-items-name {
+    @include size(0.122, "desktop");
+  }
+  .Client-items-role {
+    @include size(0.1, "desktop");
+  }
+  .Client-items-name {
+    margin: 0% 1% 0% 0%;
+  }
+  .Client-items-role {
+    margin: 0% 1% 0% 0%;
+  }
+  .Footer-Menu {
+    @include size(0.12, "desktop");
+    font-family: $Barlow;
+    font-weight: 600;
+  }
+  .Menu-item:hover {
+    color: $White;
+    cursor: pointer;
+  }
+  .Social-icons {
+    @include size(0.15, "desktop");
+  }
+  .attribution {
+    @include size(0.1, "desktop");
+  }
+}
+@import "./mobile.scss";

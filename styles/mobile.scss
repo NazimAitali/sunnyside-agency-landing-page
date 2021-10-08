@@ -1,0 +1,306 @@
+@media (max-width: $Screen-Mobile) {
+  body {
+    width: 100vw;
+  }
+  .Wrapper {
+    @include grid-display(
+      grid,
+      50% 50%,
+      10.27% 5.99% 8.37% 5.97% 8.39% 11.5% 11.5% 24.12% 3.6% 3.6% 6.7%
+    );
+  }
+  .Header-container {
+    background-image: url("../images/mobile/image-header.jpg");
+    height: 536px;
+  }
+  .Header-content h1 {
+    @include size(1, "mobile");
+    font-weight: 900;
+    margin: 21% 0% 0% 1%;
+    text-align: center;
+    letter-spacing: 9px;
+  }
+  .Header-content img {
+    margin-top: 19%;
+  }
+  .Menu-container {
+    display: none;
+  }
+  .Menu-mobile-container {
+    @include grid(2, 3, 1, 2);
+    @include grid-display(grid, 100%, 33% 33% 33%);
+    @include dimension(13, 16);
+    @include grid-position(flex-end, flex-start);
+    margin: 15% 12% 0% 0%;
+  }
+  span {
+    @include dimension(100, 19);
+    @include grid-position(center, flex-end);
+    background-color: $White;
+  }
+
+  .Menu-mobile-content {
+    display: none;
+    width: 88%;
+    height: 330px;
+    @include grid-position(center, center);
+    background-color: $White;
+    position: absolute;
+    top: 85px;
+    z-index: 1;
+  }
+  .Display-menu {
+    @include grid-display(grid, 100%, 70% 30%);
+  }
+  .Menu-mobile-content::after {
+    content: "";
+    position: absolute;
+    right: 0%;
+    bottom: 92%;
+    border-bottom: 50px solid $White;
+    border-left: 50px solid transparent;
+  }
+  .Menu-mobile {
+    @include grid(1, 1, 1, 2);
+    @include dimension(80, 80);
+    @include grid-display(grid, 100%, 33.33% 33.33% 33.33%);
+    @include grid-position(center, center);
+    color: $Dark-grayish-blue;
+  }
+  .Menu-mobile-item {
+    @include dimension(40, 24);
+    @include grid-position(center, center);
+    @include size(0.5, "mobile");
+    font-family: $Barlow;
+    text-align: center;
+  }
+
+  .About {
+    @include grid(1, 1, 1, 2);
+  }
+  .Services {
+    @include grid(1, 1, 2, 3);
+  }
+  .Projects {
+    @include grid(1, 1, 3, 4);
+  }
+  .Contact-mobile {
+    @include dimension(43, 60);
+    @include grid(1, 1, 2, 3);
+    @include size(0.45, "mobile");
+    @include radius(30px);
+    @include grid-position(center, center);
+    margin-bottom: 11%;
+    border: none;
+    background-color: $Yellow;
+    color: $Very-dark-desaturated-blue;
+    font-family: $Fraunces;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .Logo {
+    width: 67%;
+    margin: 4% 0% 0% 13%;
+  }
+  .Menu-mobile-container {
+    @include dimension(13.5, 30);
+    margin: 15% 12% 0% 0%;
+  }
+  .Brand-container {
+    @include grid(1, 3, 3, 4);
+    height: 437px;
+  }
+  .Brand-Image {
+    @include grid(1, 3, 2, 3);
+    background-image: url("../images/mobile/image-transform.jpg");
+    height: 313px;
+  }
+  .Brand-title,
+  .Audience-title {
+    @include size(0.9, "mobile");
+    @include dimension(76, 66);
+    text-align: center;
+  }
+  .Audience-title {
+    margin-left: 0;
+  }
+  .Brand-text,
+  .Audience-text {
+    @include size(0.48, "mobile");
+    @include dimension(93, 139);
+    line-height: 161%;
+    margin-left: 1%;
+    text-align: center;
+  }
+  .Audience-text {
+    @include dimension(84, 140);
+    line-height: 164%;
+    margin-left: 15%;
+  }
+  .Brand-learn-more,
+  .Audience-learn-more {
+    @include dimension(32, 18);
+    @include size(0.45, "mobile");
+    margin: 16% 1% 1% 34%;
+  }
+  .Brand-learn-more::after,
+  .Audience-learn-more::after {
+    @include dimension(114, 32);
+    top: 55%;
+    left: -7%;
+  }
+
+  .Audience-image {
+    @include grid(1, 3, 4, 5);
+    background-image: url("../images/mobile/image-stand-out.jpg");
+    height: 312px;
+  }
+  .Audience-container {
+    @include grid(1, 3, 5, 6);
+    height: 438px;
+  }
+  .Graphic-container {
+    @include grid(1, 3, 6, 7);
+    background-image: url("../images/mobile/image-graphic-design.jpg");
+    height: 600px;
+  }
+  .Photography-container {
+    @include grid(1, 3, 7, 8);
+    background-image: url("../images/mobile/image-photography.jpg");
+    height: 601px;
+  }
+  .Graphic-title,
+  .Photography-title {
+    @include size(0.75, "mobile");
+  }
+  .Graphic-text,
+  .Photography-text {
+    @include size(0.42, "mobile");
+  }
+  .Graphic-title,
+  .Photography-title {
+    @include dimension(69, 68);
+    margin-left: 16%;
+  }
+  .Graphic-text,
+  .Photography-text {
+    @include dimension(91, 15);
+    line-height: 166%;
+  }
+  .Client-container {
+    @include grid(1, 3, 8, 9);
+    @include grid-display(grid, 100%, 10% 90%);
+    height: 1259px;
+  }
+  .Client-centent {
+    @include grid-display(grid, 100%, 33.33% 33.33% 33.33%);
+    width: 100%;
+  }
+  .Client-title {
+    @include dimension(76, 48);
+    @include size(0.4, "mobile");
+    letter-spacing: 5px;
+  }
+  .Client-items-text {
+    @include size(0.48, "mobile");
+    @include dimension(89, 100);
+    line-height: 177%;
+    margin: 4% 0% 0% 6%;
+  }
+  .Client-items-name {
+    @include size(0.5, "mobile");
+    align-self: center;
+    margin-top: 3%;
+  }
+  .Client-items-role {
+    @include size(0.37, "mobile");
+    align-self: flex-start;
+    margin-top: -1%;
+  }
+  .Client-items-detail-content {
+    grid-template-rows: 44% 20%;
+  }
+  .Client-img {
+    margin: 2% 0% 0% 0%;
+  }
+  .Jennie-image {
+    margin: 0% 0% 9% 0%;
+  }
+  .Jennie-text {
+    margin: -1% 0% 0% 6%;
+  }
+  .Jennie-name {
+    margin: 0% 0% 7% 0%;
+  }
+  .Jennie-role {
+    margin: -6% 0% 0% 0%;
+  }
+  .Thomas-image {
+    margin: 0% 0% 12% 0%;
+  }
+  .Thomas-text {
+    margin: -3% 0% 0% 6%;
+  }
+  .Thomas-name {
+    margin: 7% 0% 0% 0%;
+  }
+  .Thomas-role {
+    margin: 1% 0% 0% 0%;
+  }
+  .Emily {
+    @include grid(1, 1, 1, 2);
+  }
+  .Thomas {
+    @include grid(1, 1, 2, 3);
+  }
+  .Jennie {
+    @include grid(1, 1, 3, 4);
+  }
+  .Items-one,
+  .Items-two,
+  .Items-three,
+  .Items-four {
+    background-size: cover;
+  }
+  .Items-one {
+    @include grid(1, 2, 9, 10);
+    background-image: url("../images/mobile/image-gallery-milkbottles.jpg");
+    height: 187px;
+  }
+  .Items-two {
+    @include grid(2, 3, 9, 10);
+    background-image: url("../images/mobile/image-gallery-orange.jpg");
+  }
+  .Items-three {
+    @include grid(1, 2, 10, 11);
+    background-image: url("../images/mobile/image-gallery-cone.jpg");
+    height: 187px;
+  }
+  .Items-four {
+    @include grid(2, 3, 10, 11);
+    background-image: url("../images/mobile/image-gallery-sugar-cubes.jpg");
+  }
+  .Footer-container {
+    @include grid(1, 3, 11, 12);
+    height: 347px;
+  }
+  .Footer-title img {
+    width: 46%;
+    margin: 0% 3% 3% 0%;
+  }
+  .Footer-Menu {
+    @include dimension(80, 55);
+  }
+  .Social-icons {
+    @include dimension(52, 36);
+  }
+  .Footer-Menu {
+    @include size(0.5, "mobile");
+  }
+  .Social-icons {
+    @include size(0.6, "mobile");
+  }
+  .attribution {
+    @include size(0.35, "mobile");
+  }
+}
