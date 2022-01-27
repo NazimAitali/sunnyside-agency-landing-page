@@ -26,8 +26,8 @@ Users should be able to:
 
 ### Screenshot
 
-./Mobile screenshot 375px.png
-./Desktop screenshot 1440px.png
+![](https://github.com/NazimAitali/sunnyside-agency-landing-page/blob/master/Desktop%20screenshot%201440px.png)
+![](https://github.com/NazimAitali/sunnyside-agency-landing-page/blob/master/Mobile%20screenshot%20375px.png)
 
 ### Links
 
